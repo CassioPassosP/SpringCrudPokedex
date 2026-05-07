@@ -1,5 +1,7 @@
 package com.spring.pokedex.dto;
 
+import com.spring.pokedex.entity.Pokemon;
+
 import java.util.List;
 
 public class PokemonDTO {
@@ -10,8 +12,7 @@ public class PokemonDTO {
     float height;
     float payload;
 
-    public PokemonDTO(Long id, String name, List<Enum> type, int evolution, float height, float payload) {
-        Id = id;
+    public PokemonDTO(String name, List<Enum> type, int evolution, float height, float payload) {
         this.name = name;
         this.type = type;
         this.evolution = evolution;
@@ -65,5 +66,9 @@ public class PokemonDTO {
 
     public void setPayload(float payload) {
         this.payload = payload;
+    }
+
+    public static PokemonDTO TwoControllers(Pokemon pokemon){
+        return new PokemonDTO(pokemon.getName(), pokemon.getType(), pokemon.getEvolution(), pokemon.getHeight(), pokemon.getPayload());
     }
 }
