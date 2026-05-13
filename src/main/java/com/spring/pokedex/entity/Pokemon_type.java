@@ -1,8 +1,9 @@
 package com.spring.pokedex.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.spring.pokedex.enums.pokemonTypes;
 import jakarta.persistence.*;
 import lombok.Data;
-import org.hibernate.annotations.Formula;
 
 import java.util.List;
 
@@ -15,11 +16,11 @@ public class Pokemon_type {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long type_id;
 
-    @Column
-    String name;
+    @Enumerated(EnumType.STRING)
+    pokemonTypes name;
 
-    @ManyToOne
-    @JoinColumn(name = "pokemon_id", referencedColumnName = "id")
-    Pokemon pokemonId;
+    @JsonIgnore
+    @OneToMany(mappedBy = "type")
+    List<Pokemon> pokemons;
 
 }

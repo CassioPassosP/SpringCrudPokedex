@@ -22,18 +22,4 @@ public class Pokemon_typeController {
         return null;
     }
 
-//    @GetMapping("/{id}")
-//    public ResponseEntity<Pokemon_typeDTO> obterPorId(@PathVariable Long id) {
-//        Pokemon_typeDTO dto = service.obterPorId(id);
-//        if (dto != null) {
-//            return ResponseEntity.ok(dto);
-//        }
-//        return ResponseEntity.notFound().build();
-//    }
-
-//    @PostMapping
-//    public ResponseEntity<Pokemon_typeDTO> criar(@RequestBody Pokemon_typeDTO dto) {
-//        Pokemon_typeDTO created = service.criar(dto);
-//        return ResponseEntity.status(HttpStatus.CREATED).body(created);
-//    }
 }

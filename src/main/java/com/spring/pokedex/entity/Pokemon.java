@@ -3,8 +3,6 @@ package com.spring.pokedex.entity;
 import jakarta.persistence.*;
 import lombok.Data;
 
-import java.util.List;
-
 @Data
 @Entity
 @Table(name = "pokemon")
@@ -17,8 +15,9 @@ public class Pokemon {
     @Column
     String name;
 
-    @Column
-    List<Enum> type;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "type")
+    Pokemon_type type;
 
     @Column
     int evolution;

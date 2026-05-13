@@ -1,18 +1,20 @@
 package com.spring.pokedex.dto;
 
 import com.spring.pokedex.entity.Pokemon;
+import com.spring.pokedex.entity.Pokemon_type;
+import com.spring.pokedex.enums.pokemonTypes;
 
 import java.util.List;
 
 public class PokemonDTO {
     Long Id;
     String name;
-    List<Enum> type;
+    Pokemon_type type;
     int evolution;
     float height;
     float payload;
 
-    public PokemonDTO(String name, List<Enum> type, int evolution, float height, float payload) {
+    public PokemonDTO(String name, Pokemon_type type, int evolution, float height, float payload) {
         this.name = name;
         this.type = type;
         this.evolution = evolution;
@@ -36,11 +38,11 @@ public class PokemonDTO {
         this.name = name;
     }
 
-    public List<Enum> getType() {
+    public Pokemon_type getType() {
         return type;
     }
 
-    public void setType(List<Enum> type) {
+    public void setType(Pokemon_type type) {
         this.type = type;
     }
 
